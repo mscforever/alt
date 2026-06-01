@@ -113,8 +113,8 @@ augenrules --load 2>&1
 echo -e "\nУстановленные правила:"
 auditctl -l
 
-echo -e "\nПроверка плагинов:"
-auditctl -s | grep -i plugin
+#echo -e "\nПроверка плагинов:"
+#auditctl -s | grep -i plugin
 
 # Проверка статуса сервисов
 echo -e "\n=== Статус сервисов ==="
