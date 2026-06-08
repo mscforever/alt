@@ -109,6 +109,18 @@ echo -e "${GREEN}  ✓ Конфигурация применена${NC}"
 # 7. Настройка rsyslog (новый синтаксис)
 echo -e "\n${YELLOW}[5/6] Настройка rsyslog...${NC}"
 cat > "$RSYSLOG_CFG" << EOF
+
+# Загрузка модуля imfile для чтения файлов
+module(load="imfile" mode="inotify")
+
+# Чтение audit.log
+input(type="imfile"
+      File="/var/log/audit/audit.log"
+      Tag="auditd"
+      Facility="local6"
+      Severity="info"
+      startmsg.regex="^type="
+      FreshStartTail="off")
 # Фильтр для audit логов (local6 facility + info severity)
 if (\$syslogfacility-text == "local6" and \$syslogpriority-text == "info") then {
     action(type="omfwd"
