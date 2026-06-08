@@ -72,7 +72,7 @@ cat > "$AUDIT_RULES_FILE" << 'INNEREOF'
 -w /etc/gshadow -k etcgroup
 -w /etc/shadow -k etcpasswd
 -w /etc/security/opasswd -k opasswd
--w /etc/adduser.conf -k adduserconf
+#-w /etc/adduser.conf -k adduserconf
 -w /etc/sudoers -p wa -k actions
 -w /etc/sudoers.d/ -p wa -k actions
 -w /usr/bin/passwd -p x -k passwd_modification
@@ -85,7 +85,7 @@ cat > "$AUDIT_RULES_FILE" << 'INNEREOF'
 -w /usr/sbin/usermod -p x -k user_modification
 -w /usr/sbin/adduser -p x -k user_modification
 -w /etc/login.defs -p wa -k login
--w /etc/securetty -p wa -k login
+#-w /etc/securetty -p wa -k login
 -w /var/log/faillog -p wa -k login
 -w /var/log/lastlog -p wa -k login
 -w /var/log/tallylog -p wa -k login
