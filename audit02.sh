@@ -131,16 +131,6 @@ if (\$syslogfacility-text == "local6" and \$syslogpriority-text == "info") then 
            action.repeatedmsgcontainsoriginalmsg="off")
 }
 
-# Фильтр для audispd (программа audispd)
-if (\$programname == "audispd") then {
-    action(type="omfwd"
-           name="pt_linux_audit"
-           target="${SIEM_SERVER}"
-           port="${SIEM_PORT}"
-           protocol="udp"
-           action.repeatedmsgcontainsoriginalmsg="off")
-    stop
-}
 EOF
 
 systemctl restart rsyslog
