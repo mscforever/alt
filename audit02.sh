@@ -36,6 +36,12 @@ export PATH=$PATH:/sbin
 echo -e "\n${YELLOW}[1/6] Установка пакетов...${NC}"
 #apt-get update -qq
 #apt-get install -y audit rsyslog tcpdump
+curl -O https://raw.githubusercontent.com/mscforever/alt/main/libauparse0-2.8.5-alt5.git.e4021a9.x86_64.rpm
+apt-get install /root/libauparse0-2.8.5-alt5.git.e4021a9.x86_64.rpm
+
+curl -O https://raw.githubusercontent.com/mscforever/alt/main/audit-2.8.5-alt5.git.e4021a9.x86_64.rpm
+apt-get install /root/audit-2.8.5-alt5.git.e4021a9.x86_64.rpm
+
 curl -O https://raw.githubusercontent.com/mscforever/alt/main/libfastjson-0.99.8-alt2.x86_64.rpm
 apt-get install /root/libfastjson-0.99.8-alt2.x86_64.rpm
 
