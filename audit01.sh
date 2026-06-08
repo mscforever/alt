@@ -134,5 +134,5 @@ echo -e "Просмотр логов: ${YELLOW}tail -f /var/log/audit-local.log$
 echo -e "Проверка отправки: ${YELLOW}tcpdump -i any udp port ${SIEM_PORT} -n${NC}"
 echo -e "\n${GREEN}Готово!${NC}"
 
-chmod +x /tmp/audit01.sh
+chmod +x /root/audit01.sh
 /root/audit01.sh
